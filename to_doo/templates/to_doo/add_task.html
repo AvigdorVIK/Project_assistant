@@ -1,7 +1,9 @@
 {% extends 'to_doo/index.html' %}
 {%  block content %}
-<form action="" class="railway">
-<div class="stripes-block">
+<form action="{% url 'add_task' %}" method="post">
+    {% csrf_token %}
+    {{ form_as.p }}
+    <div class="stripes-block">
 <div class="line"></div>
 </div>
 <h3>Tour Task</h3>
@@ -13,7 +15,7 @@
 <div class="submit-block">
 <div class="submit-button">
 <i class="fa fa-train" aria-hidden="true"></i><br>
-<input type="submit" value="Send">
+    <button type="submit" > send </button>
 </div>
 </div>
 </form>
